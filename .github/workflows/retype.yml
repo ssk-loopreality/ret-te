@@ -21,4 +21,4 @@ jobs:
       
       - run: retype build
 
-      - run: retype run
+      - run: retype run -d
