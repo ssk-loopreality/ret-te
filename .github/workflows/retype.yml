@@ -14,12 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 5.0.x
+      - uses: actions/setup-node@v2
+      with:
+        node-version: '12'
 
-      - uses: retypeapp/action-build@v1
+      - run: npm install retypeapp --global
+      
+      - run: retype build
 
-      - uses: retypeapp/action-github-pages@v1
-        with:
-          update-branch: true
+      - run: retype run
